@@ -1,13 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!DOCTYPE html>
+  <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 ,user-scalable=no" />
     <title>Vite App</title>
+    <script>
+      (function (window, document) {
+        var docEl = document.documentElement;
+        // var viewportEl = document.querySelector('meta[name=viewport]');
+        // var dpr = window.devicePixelRatio || 1;
+        // var scale = 1 / dpr;
+        // viewportEl.setAttribute('content', 'width=device-width,initial-scale='+scale+',maximum-scale='+scale+',minimum-scale='+scale+',user-scalable=no');
+        function layout() {
+          var rem = docEl.clientWidth / 750 * 100;
+          docEl.style.fontSize = rem + 'px';
+        }
+        layout();
+        window.addEventListener('resize', layout);
+        window.addEventListener('pageshow', function (e) {
+          if (e.presisted) {
+            layout();
+          }
+        });
+      })(window, document);
+    </script>
   </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+
+<body>
+  <div id="app"></div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
+<title>Vite App</title>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
 </html>
